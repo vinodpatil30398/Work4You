@@ -1,31 +1,11 @@
-// Header Scroll Effect
-const header = document.querySelector('.sticky-header');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+document.querySelector('.hero-scroll-down').addEventListener('click', () => {
+  // Scrolls smoothly to the next section (adjust as needed)
+  const nextSection = document.querySelector('.class-about-us-section-w4u'); // add a class or ID to your next section
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: 'smooth' });
+  }
 });
-
-// Mobile Menu Toggle
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-mobileMenuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    mobileMenuToggle.classList.toggle('active');
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-    });
-});
-
 
 document.addEventListener('DOMContentLoaded', function() {
   // Animate stats counting
