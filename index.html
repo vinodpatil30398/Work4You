@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaForge Collective | Freelance Digital Services</title>
+    <meta name="description" content="Professional website development, content creation, and Indian document services.">
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lottie Animations -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+       :root {
+  --dark-bg: #0f0f1a; /* Deep space blue */
+  --space-purple: #2a0845;
+  --neon-blue: #00d4ff;
+}
+
+body {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--space-purple) 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Add animated stars effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 20%);
+  z-index: -1;
+  animation: pulse 15s infinite alternate;
+}
+
+/* Add some floating particles */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0,212,255,0.6) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 100px 100px, 150px 150px, 200px 200px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+      </style>
+      <script src="js/header.js" defer></script>
+      <script src="js/footer.js" defer></script>
+</head>
+<body>
+    <header-component></header-component>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+<!-- Futuristic Hero Section -->
+<section class="hero-section-impressive" id="hero-impressive">
+  <!-- Mesh Gradient Background -->
+  <div class="hero-mesh-bg"></div>
+  
+  <!-- Floating Grid Background -->
+  <div class="hero-grid-bg">
+    <div class="hero-grid-line v1"></div>
+    <div class="hero-grid-line v2"></div>
+    <div class="hero-grid-line v3"></div>
+    <div class="hero-grid-line h1"></div>
+    <div class="hero-grid-line h2"></div>
+    <div class="hero-grid-line h3"></div>
+  </div>
+
+  <!-- Floating Elements -->
+  <div class="hero-floating-elements">
+    <div class="hero-float-element e1"></div>
+    <div class="hero-float-element e2"></div>
+    <div class="hero-float-element e3"></div>
+    <div class="hero-float-element e4"></div>
+  </div>
+
+  <div class="hero-container-impressive">
+    <div class="hero-content-wrapper">
+      <div class="hero-text-wrapper">
+        <!-- Animated Badge -->
+        <div class="hero-impressive-badge">
+          <span class="hero-badge-txt">Freelance Collective</span>
+          <div class="hero-badge-dots">
+            <div class="hero-badge-dot d1"></div>
+            <div class="hero-badge-dot d2"></div>
+            <div class="hero-badge-dot d3"></div>
+          </div>
+        </div>
+
+        <!-- Dynamic Heading - Proper 2 Line Layout -->
+        <h1 class="hero-main-heading">
+          <span class="hero-heading-line">
+            <span class="hero-static-txt">We </span>
+            <span class="hero-changing-words" id="changingWords">
+              <span class="hero-word active">Build</span>
+              <span class="hero-word">Create</span>
+              <span class="hero-word">Transform</span>
+              <span class="hero-word">Innovate</span>
+            </span>
+          </span>
+          <span class="hero-heading-line">
+            <span class="hero-static-txt">Digital </span>
+            <span class="hero-highlight-txt">Experiences</span>
+          </span>
+        </h1>
+
+        <p class="hero-sub-text">
+          A team of 4 specialized freelancers crafting cutting-edge web solutions, 
+          stunning designs, and professional documents since 2020.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="hero-action-btns">
+          <a href="#services" class="hero-main-btn primary-btn">
+            <span class="hero-btn-icon">
+              <i class="fas fa-rocket"></i>
+            </span>
+            <span class="hero-btn-txt">Our Services</span>
+            <span class="hero-btn-hover-effect"></span>
+          </a>
+          
+          <a href="#contact" class="hero-main-btn secondary-btn">
+            <span class="hero-btn-icon">
+              <i class="fas fa-comments"></i>
+            </span>
+            <span class="hero-btn-txt">Get Consultation</span>
+          </a>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="hero-tech-showcase">
+          <div class="hero-tech-label">Our Tech Stack:</div>
+          <div class="hero-tech-icons">
+            <div class="hero-tech-item" data-tooltip="HTML5">
+              <i class="fab fa-html5"></i>
+            </div>
+            <div class="hero-tech-item" data-tooltip="CSS3">
+              <i class="fab fa-css3-alt"></i>
+            </div>
+            <div class="hero-tech-item" data-tooltip="JavaScript">
+              <i class="fab fa-js"></i>
+            </div>
+            <div class="hero-tech-item" data-tooltip="React">
+              <i class="fab fa-react"></i>
+            </div>
+            <div class="hero-tech-item" data-tooltip="Node.js">
+              <i class="fab fa-node-js"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lottie Animation - Centered Properly -->
+      <div class="hero-animation-container">
+        <dotlottie-wc 
+          src="https://lottie.host/4396f950-f2fa-404e-83f5-9d6ca6342cea/Hw7R7soE0Z.lottie" 
+          style="width:160% !important; height: 170% !important; margin-left:-100px;" 
+          speed="1" 
+          autoplay 
+          loop>
+        </dotlottie-wc>
+        <div class="hero-animation-glow"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="hero-scroll-down">
+    <div class="hero-scroll-mouse">
+      <div class="hero-scroll-wheel"></div>
+    </div>
+    <span>Scroll Down</span>
+  </div>
+</section>
+
+<!-- Include Lottie Web Component -->
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+
+<!-- Word Changing Animation Script -->
+<script>
+  // Dynamic Word Changing Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const changingWords = document.getElementById('changingWords');
+    const words = changingWords.querySelectorAll('.hero-word');
+    let currentIndex = 0;
+    
+    function changeWord() {
+      // Remove active class from current word
+      words[currentIndex].classList.remove('active');
+      
+      // Move to next word
+      currentIndex = (currentIndex + 1) % words.length;
+      
+      // Add active class to new word
+      words[currentIndex].classList.add('active');
+    }
+    
+    // Change word every 3 seconds
+    setInterval(changeWord, 3000);
+  });
+</script>
+<!-- Include Lottie Web Component -->
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+
+
+<!-- About Us Section - Freelance Startup -->
+<section id="abut-us-sec" class="class-about-us-section-w4u">
+  <!-- Floating Background Elements -->
+  <div class="w4u-bg-circle w4u-circle-1"></div>
+  <div class="w4u-bg-circle w4u-circle-2"></div>
+  <div class="w4u-bg-particles">
+    <div class="w4u-particle w4u-particle-1"></div>
+    <div class="w4u-particle w4u-particle-2"></div>
+    <div class="w4u-particle w4u-particle-3"></div>
+  </div>
+  
+  <div class="w4u-container">
+    <!-- Section Header -->
+    <div class="w4u-header-wrap">
+      <h2 class="w4u-main-heading">
+        <span class="w4u-heading-gradient">Digital Solutions</span>
+        <span class="w4u-heading-line"></span>
+      </h2>
+      <p class="w4u-sub-heading">Your vision, our expertise - delivering quality freelance services worldwide</p>
+    </div>
+
+    <div class="w4u-content-grid">
+      <!-- About Card -->
+      <div class="w4u-card w4u-about-card">
+        <div class="w4u-card-icon">
+          <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_5tkzkblw.json" 
+                       background="transparent" speed="1" 
+                       style="width: 60px; height: 60px;" loop autoplay>
+          </lottie-player>
+        </div>
+        <h3 class="w4u-card-title">Who We Are</h3>
+        <p class="w4u-card-text">We are a passionate team of 5 digital experts specializing in 40+ services across web development, design, and content creation. Founded with the mission to make quality digital services accessible to everyone.</p>
+        <div class="w4u-highlight-box">
+          <p>Providing <span>affordable</span>, <span>fast</span>, and <span>reliable</span> solutions to clients worldwide</p>
+        </div>
+      </div>
+
+      <!-- Services Illustration -->
+      <div class="w4u-illustration-wrap">
+        <div class="w4u-illustration-box">
+          <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_iv4dsx3q.json" 
+                       background="transparent" speed="1" 
+                       style="width: 100%; height: 100%;" loop autoplay>
+          </lottie-player>
+        </div>
+        <div class="w4u-floating-icons">
+          <div class="w4u-icon w4u-icon-1">🖥️</div>
+          <div class="w4u-icon w4u-icon-2">✏️</div>
+          <div class="w4u-icon w4u-icon-3">🎥</div>
+        </div>
+      </div>
+
+      <!-- Process Card -->
+      <div class="w4u-card w4u-process-card">
+        <div class="w4u-card-icon">
+          <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_yo4yzbug.json" 
+                       background="transparent" speed="1" 
+                       style="width: 60px; height: 60px;" loop autoplay>
+          </lottie-player>
+        </div>
+        <h3 class="w4u-card-title">How We Work</h3>
+        <ol class="w4u-process-list">
+          <li class="w4u-process-item">
+            <span class="w4u-process-number">1</span>
+            <span class="w4u-process-text">Choose from our 40+ services</span>
+          </li>
+          <li class="w4u-process-item">
+            <span class="w4u-process-number">2</span>
+            <span class="w4u-process-text">Contact us via WhatsApp/Email</span>
+          </li>
+          <li class="w4u-process-item">
+            <span class="w4u-process-number">3</span>
+            <span class="w4u-process-text">Discuss requirements & budget</span>
+          </li>
+          <li class="w4u-process-item">
+            <span class="w4u-process-number">4</span>
+            <span class="w4u-process-text">Get fast delivery with support</span>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Services Card -->
+      <div class="w4u-card w4u-services-card">
+        <div class="w4u-card-icon">
+          <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_obhph3sh.json" 
+                       background="transparent" speed="1" 
+                       style="width: 60px; height: 60px;" loop autoplay>
+          </lottie-player>
+        </div>
+        <h3 class="w4u-card-title">Our Services</h3>
+        <div class="w4u-services-grid">
+          <div class="w4u-service-category">
+            <h4 class="w4u-category-title">Web Services</h4>
+            <ul class="w4u-service-list">
+              <li>Website Design</li>
+              <li>Development</li>
+              <li>Maintenance</li>
+              <li>Audit</li>
+            </ul>
+          </div>
+          <div class="w4u-service-category">
+            <h4 class="w4u-category-title">Creative</h4>
+            <ul class="w4u-service-list">
+              <li>Graphic Design</li>
+              <li>Video Editing</li>
+              <li>Content Writing</li>
+              <li>Presentations</li>
+            </ul>
+          </div>
+          <div class="w4u-service-category">
+            <h4 class="w4u-category-title">Creative</h4>
+            <ul class="w4u-service-list">
+              <li>Graphic Design</li>
+              <li>Video Editing</li>
+              <li>Content Writing</li>
+              <li>Presentations</li>
+            </ul>
+          </div>
+          <div class="w4u-service-category">
+            <h4 class="w4u-category-title">Creative</h4>
+            <ul class="w4u-service-list">
+              <li>Graphic Design</li>
+              <li>Video Editing</li>
+              <li>Content Writing</li>
+              <li>Presentations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Services Section -->
+<section id="freelancer-services" class="freelancer-services-section">
+  <div class="freelancer-container">
+    <div class="freelancer-section-header">
+      <h2 class="freelancer-section-title">Our <span>Services</span></h2>
+      <p class="freelancer-section-subtitle">Comprehensive solutions tailored to your needs</p>
+    </div>
+
+    <!-- Services Tabs -->
+    <div class="freelancer-tabs-container">
+      <div class="freelancer-tabs">
+        <button class="freelancer-tab-btn active" data-freelancer-tab="web">Web Services</button>
+        <button class="freelancer-tab-btn" data-freelancer-tab="design">Design & Media</button>
+        <button class="freelancer-tab-btn" data-freelancer-tab="content">Content</button>
+        <button class="freelancer-tab-btn" data-freelancer-tab="data">Data Services</button>
+        <button class="freelancer-tab-btn" data-freelancer-tab="india">India Services</button>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="freelancer-services-grid">
+      <!-- Web Services Tab -->
+      <div class="freelancer-service-card web-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Web Development</h3>
+        <p>Custom websites with HTML, CSS, JavaScript, React, PHP</p>
+      </div>
+
+      <div class="freelancer-service-card web-service">
+        <div class="freelancer-service-icon">
+          <i class="fab fa-wordpress"></i>
+        </div>
+        <h3>WordPress</h3>
+        <p>Theme customization, plugins, and maintenance</p>
+      </div>
+
+      <div class="freelancer-service-card web-service">
+        <div class="freelancer-service-icon">
+          <i class="fab fa-shopify"></i>
+        </div>
+        <h3>Shopify</h3>
+        <p>E-commerce store setup and customization</p>
+      </div>
+
+      <div class="freelancer-service-card web-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-server"></i>
+        </div>
+        <h3>Web Hosting</h3>
+        <p>Domain, hosting, and server management</p>
+      </div>
+
+      <!-- Design & Media Tab -->
+      <div class="freelancer-service-card design-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-photo-video"></i>
+        </div>
+        <h3>Video Editing</h3>
+        <p>Professional video compilation and effects</p>
+      </div>
+
+      <div class="freelancer-service-card design-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-image"></i>
+        </div>
+        <h3>Image Editing</h3>
+        <p>Photo retouching and graphic design</p>
+      </div>
+
+      <div class="freelancer-service-card design-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-ad"></i>
+        </div>
+        <h3>Banner Design</h3>
+        <p>Social media and marketing banners</p>
+      </div>
+
+      <!-- Content Tab -->
+      <div class="freelancer-service-card content-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-pen-fancy"></i>
+        </div>
+        <h3>Content Writing</h3>
+        <p>Blogs, articles, and website content</p>
+      </div>
+
+      <div class="freelancer-service-card content-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-scroll"></i>
+        </div>
+        <h3>Script Writing</h3>
+        <p>Video scripts and storytelling</p>
+      </div>
+
+      <div class="freelancer-service-card content-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-file-powerpoint"></i>
+        </div>
+        <h3>PPT Creation</h3>
+        <p>Professional presentations</p>
+      </div>
+
+      <!-- Data Services Tab -->
+      <div class="freelancer-service-card data-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3>Data Entry</h3>
+        <p>Accurate data collection and processing</p>
+      </div>
+
+      <div class="freelancer-service-card data-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-poll"></i>
+        </div>
+        <h3>Survey Forms</h3>
+        <p>Online survey creation and analysis</p>
+      </div>
+
+      <!-- India Services Tab -->
+      <div class="freelancer-service-card india-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-id-card"></i>
+        </div>
+        <h3>PAN Card</h3>
+        <p>New applications and corrections</p>
+      </div>
+
+      <div class="freelancer-service-card india-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-address-card"></i>
+        </div>
+        <h3>Aadhaar Update</h3>
+        <p>Address and detail changes</p>
+      </div>
+
+      <div class="freelancer-service-card india-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-vote-yea"></i>
+        </div>
+        <h3>Voter ID</h3>
+        <p>Registration and corrections</p>
+      </div>
+
+      <div class="freelancer-service-card india-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-passport"></i>
+        </div>
+        <h3>Passport Help</h3>
+        <p>Form filling and document prep</p>
+      </div>
+
+      <div class="freelancer-service-card india-service">
+        <div class="freelancer-service-icon">
+          <i class="fas fa-train"></i>
+        </div>
+        <h3>Ticket Booking</h3>
+        <p>Train, flight & bus reservations</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative Background Elements -->
+  <div class="freelancer-bg-elements">
+    <div class="freelancer-bg-circle freelancer-circle-1"></div>
+    <div class="freelancer-bg-circle freelancer-circle-2"></div>
+    <div class="freelancer-bg-circle freelancer-circle-3"></div>
+  </div>
+</section>
+
+<section class="why-choose-us">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Our Advantages</span>
+            <h2 class="section-title">Why Choose NexaForge?</h2>
+            <p class="section-description">We combine speed, quality, and innovation to deliver exceptional results</p>
+        </div>
+
+        <div class="benefits-grid">
+            <!-- Benefit Card 1 -->
+            <div class="benefit-card">
+                <div class="card-bg-shape"></div>
+                <div class="benefit-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Lightning Fast Delivery</h3>
+                <p>Most projects completed in 3-5 business days without compromising quality</p>
+                <div class="pulse-dot"></div>
+            </div>
+
+            <!-- Benefit Card 2 -->
+            <div class="benefit-card">
+                <div class="card-bg-shape"></div>
+                <div class="benefit-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Trusted Professionals</h3>
+                <p>Verified experts with 5+ years average experience in their fields</p>
+                <div class="pulse-dot"></div>
+            </div>
+
+            <!-- Benefit Card 3 -->
+            <div class="benefit-card">
+                <div class="card-bg-shape"></div>
+                <div class="benefit-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <h3>End-to-End Service</h3>
+                <p>From initial concept to final delivery - we handle everything</p>
+                <div class="pulse-dot"></div>
+            </div>
+
+            <!-- Benefit Card 4 -->
+            <div class="benefit-card">
+                <div class="card-bg-shape"></div>
+                <div class="benefit-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock assistance for all your queries and concerns</p>
+                <div class="pulse-dot"></div>
+            </div>
+
+            <!-- Benefit Card 5 -->
+            <div class="benefit-card">
+                <div class="card-bg-shape"></div>
+                <div class="benefit-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <h3>Transparent Pricing</h3>
+                <p>No hidden fees - clear upfront costs for all services</p>
+                <div class="pulse-dot"></div>
+            </div>
+
+            <!-- Benefit Card 6 -->
+            <div class="benefit-card">
+                <div class="card-bg-shape"></div>
+                <div class="benefit-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Proven Results</h3>
+                <p>500+ satisfied clients with measurable business growth</p>
+                <div class="pulse-dot"></div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="testimonials" class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-subtitle">Client Voices</span>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-description">Hear from businesses and individuals who've experienced our services firsthand</p>
+        </div>
+
+        <div class="testimonial-slider">
+            <!-- Testimonial Card 1 -->
+            <div class="testimonial-card">
+                <div class="card-bg-pattern"></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">"The team delivered my WordPress site 2 days early with perfect SEO optimization! Our traffic increased by 300% within a month."</p>
+                <div class="client-info">
+                    <div class="client-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya Sharma">
+                        <div class="avatar-border"></div>
+                    </div>
+                    <div class="client-details">
+                        <h4>Priya Sharma</h4>
+                        <span>Small Business Owner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div class="testimonial-card">
+                <div class="card-bg-pattern"></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">"Their document services saved me weeks of paperwork. My passport and visa processing was completed in record time."</p>
+                <div class="client-info">
+                    <div class="client-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul Patel">
+                        <div class="avatar-border"></div>
+                    </div>
+                    <div class="client-details">
+                        <h4>Rahul Patel</h4>
+                        <span>IT Professional</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="testimonial-card">
+                <div class="card-bg-pattern"></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">"The mobile app they developed exceeded our expectations. User engagement has never been higher since the launch."</p>
+                <div class="client-info">
+                    <div class="client-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Neha Gupta">
+                        <div class="avatar-border"></div>
+                    </div>
+                    <div class="client-details">
+                        <h4>Neha Gupta</h4>
+                        <span>Startup Founder</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Card 4 -->
+            <div class="testimonial-card">
+                <div class="card-bg-pattern"></div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">"Their attention to detail in UI/UX design transformed our customer experience. Conversion rates improved by 40%."</p>
+                <div class="client-info">
+                    <div class="client-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Arjun Singh">
+                        <div class="avatar-border"></div>
+                    </div>
+                    <div class="client-details">
+                        <h4>Arjun Singh</h4>
+                        <span>E-commerce Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-controls">
+            <button class="slider-prev" aria-label="Previous testimonial">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slider-dots"></div>
+            <button class="slider-next" aria-label="Next testimonial">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+   <!-- Our Process - With Background Numbers -->
+<section id="process" class="process-section">
+    <!-- Decorative background elements -->
+    <div class="process-bg-circle circle-1"></div>
+    <div class="process-bg-circle circle-2"></div>
+    <div class="process-bg-circle circle-3"></div>
+    
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">How It <span>Works</span></h2>
+            <p class="section-subtitle">Simple steps to bring your vision to life</p>
+        </div>
+        
+        <div class="process-steps">
+            <!-- Step 1 -->
+            <div class="process-step">
+                <div class="step-number-bg">1</div>
+                <div class="step-visual">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Discover Services</h3>
+                    <p>Explore our comprehensive range of digital solutions tailored to your needs</p>
+                </div>
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0,5 Q25,10 50,5 T100,5" fill="none" stroke="rgba(108, 99, 255, 0.2)" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="process-step">
+                <div class="step-number-bg">2</div>
+                <div class="step-visual">
+                    <div class="step-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Connect With Us</h3>
+                    <p>Reach out via WhatsApp, email, or our contact form to discuss your project</p>
+                </div>
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0,5 Q25,10 50,5 T100,5" fill="none" stroke="rgba(108, 99, 255, 0.2)" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="process-step">
+                <div class="step-number-bg">3</div>
+                <div class="step-visual">
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Finalize Details</h3>
+                    <p>We'll align on project scope, timeline, and budget for perfect execution</p>
+                </div>
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0,5 Q25,10 50,5 T100,5" fill="none" stroke="rgba(108, 99, 255, 0.2)" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="process-step">
+                <div class="step-number-bg">4</div>
+                <div class="step-visual">
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Launch Success</h3>
+                    <p>Receive your completed project with support for any refinements needed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-header">
+            <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+            <p class="section-subtitle">Everything you need to know about our services</p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-list">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-number">01</span>
+                        <span class="question-text">How do I hire your team?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can contact us directly via WhatsApp or by filling out the contact form on our website. We'll schedule a free consultation call to discuss your project requirements, timeline, and budget before providing a quote.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-number">02</span>
+                        <span class="question-text">What services do you offer?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer comprehensive digital services including web development, mobile apps, UI/UX design, digital marketing, content creation, and business automation solutions. We can handle everything from small website fixes to complete digital transformations.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-number">03</span>
+                        <span class="question-text">How do you handle payments?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept payments via bank transfer, PayPal, and cryptocurrency. For larger projects, we typically break payments into milestones (30% upfront, 40% at midpoint, and 30% upon completion). All payment terms are clearly outlined in our contract.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-number">04</span>
+                        <span class="question-text">What's your turnaround time?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Standard projects take 2-4 weeks depending on complexity. We offer expedited services for urgent projects (additional 25% fee). During our initial consultation, we'll provide a detailed timeline based on your specific requirements.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span class="question-number">05</span>
+                        <span class="question-text">Do you offer ongoing support?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We provide three months of free bug-fixing support for all projects. After that, we offer flexible maintenance plans starting at $99/month. Our support includes updates, security patches, and minor content changes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="faq-bubble bubble-1"></div>
+    <div class="faq-bubble bubble-2"></div>
+    <div class="faq-bubble bubble-3"></div>
+    <div class="faq-bubble bubble-4"></div>
+</section>
+
+<!-- Futuristic CTA Section -->
+<section class="futuristic-cta">
+    <!-- Animated background elements -->
+    <div class="cta-particle particle-1"></div>
+    <div class="cta-particle particle-2"></div>
+    <div class="cta-particle particle-3"></div>
+    <div class="cta-particle particle-4"></div>
+    <div class="cta-particle particle-5"></div>
+    
+    <div class="container">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to <span>Launch</span> Your Project?</h2>
+            <p class="cta-subtitle">Get a free quote within 24 hours with our AI-powered estimator</p>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-btn primary-btn">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">Hire Us Now</span>
+                </a>
+                <a href="#services" class="cta-btn secondary-btn">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">Explore Services</span>
+                </a>
+            </div>
+            
+            <div class="cta-features">
+                <div class="feature-item">
+                    <div class="feature-icon">🚀</div>
+                    <span>Fast Delivery</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💎</div>
+                    <span>Premium Quality</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <span>Secure Payments</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Modern Contact Section -->
+<section id="contact" class="modern-contact">
+    <!-- Decorative elements -->
+    <div class="contact-blob blob-1"></div>
+    <div class="contact-blob blob-2"></div>
+    <div class="contact-dots"></div>
+    
+    <div class="container">
+        <div class="contact-header">
+            <h2 class="section-title">Let's <span>Connect</span></h2>
+            <p class="section-subtitle">Reach out for collaborations, inquiries, or just to say hello!</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-methods">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/919876543210" class="contact-btn whatsapp">
+                    <div class="btn-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="btn-content">
+                        <span class="btn-title">WhatsApp Chat</span>
+                        <span class="btn-sub">Fastest response</span>
+                    </div>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:contact@nexaforge.com" class="contact-btn email">
+                    <div class="btn-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="btn-content">
+                        <span class="btn-title">Email Us</span>
+                        <span class="btn-sub">contact@nexaforge.com</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Newsletter Form with Glass Effect -->
+            <div class="newsletter-wrapper">
+                <form class="newsletter-form" id="newsletterForm">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter</p>
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Subscribe</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer-component></footer-component>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

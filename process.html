@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Process | FuturaFreelance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6e45e2;
+            --secondary: #88d3ce;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #ff7e5f;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 50%, rgba(110, 69, 226, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 30%, rgba(136, 211, 206, 0.15) 0%, transparent 50%);
+            animation: pulse 15s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        
+        /* Hero Section */
+        .process-hero {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .process-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: fadeIn 1s ease;
+        }
+
+        .process-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Process Timeline */
+        .process-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .process-line {
+            position: absolute;
+            width: 4px;
+            background: var(--gradient);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .process-step {
+            position: relative;
+            width: 100%;
+            margin-bottom: 5rem;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            text-align: right;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .process-step:nth-child(even) {
+            justify-content: flex-start;
+            padding-left: 50%;
+            padding-right: 0;
+            text-align: left;
+        }
+
+        .process-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .step-content {
+            width: 100%;
+            max-width: 500px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:nth-child(odd) .step-content::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
+            top: 50%;
+            right: -40px;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .process-step:nth-child(even) .step-content::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background: var(--secondary);
+            top: 50%;
+            left: -40px;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .step-number {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: white;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+            margin-left:20%;
+        }
+
+        .process-step:nth-child(odd) .step-number {
+            right: 18%;
+        }
+
+        .process-step:nth-child(even) .step-number {
+            left: -80px;
+        }
+
+        .step-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .step-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .step-features li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .step-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .step-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(30px);
+            animation: float 15s infinite linear;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+            top: 50%;
+            left: 80%;
+            animation-delay: 3s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            background: var(--accent);
+            top: 70%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(50px, 50px) rotate(10deg); }
+            50% { transform: translate(100px, 0) rotate(20deg); }
+            75% { transform: translate(50px, -50px) rotate(10deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        /* CTA Section */
+        .process-cta {
+            padding: 5rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .process-cta p {
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(110, 69, 226, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(110, 69, 226, 0.4);
+        }
+
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .process-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .process-line {
+                left: 40px;
+            }
+
+            .process-step,
+            .process-step:nth-child(even) {
+                padding-left: 70px;
+                padding-right: 20px;
+                text-align: left;
+                justify-content: flex-start;
+            }
+
+            .process-step:nth-child(odd) .step-number,
+            .process-step:nth-child(even) .step-number {
+                left: -10px;
+                right: auto;
+            }
+
+            .process-step:nth-child(odd) .step-content::before,
+            .process-step:nth-child(even) .step-content::before {
+                left: -40px;
+                right: auto;
+            }
+        }
+
+       
+        
+    </style>
+    <script src="js/header.js" defer></script>
+    <script src="js/footer.js" defer></script>
+</head>
+<body>
+    <header-component></header-component>
+    <div class="bg-animation"></div>
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+    
+    
+    <section class="process-hero">
+        <h1>Our Proven Process</h1>
+        <p>Discover how we transform your ideas into exceptional digital experiences through our carefully crafted workflow, combining creativity with technical excellence.</p>
+    </section>
+
+    <div class="process-container">
+        <div class="process-line"></div>
+        
+        <!-- Step 1 -->
+        <div class="process-step">
+            <div class="step-content">
+                <i class="fas fa-lightbulb step-icon"></i>
+                <h3>Discovery & Consultation</h3>
+                <p>We begin by deeply understanding your vision, goals, and requirements through comprehensive discussions and research.</p>
+                <ul class="step-features">
+                    <li>Initial free consultation session</li>
+                    <li>Requirement analysis questionnaire</li>
+                    <li>Market and competitor research</li>
+                    <li>Project scope definition</li>
+                </ul>
+            </div>
+            <div class="step-number">1</div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="process-step">
+            <div class="step-content">
+                <i class="fas fa-pencil-ruler step-icon"></i>
+                <h3>Planning & Strategy</h3>
+                <p>Our team creates a detailed roadmap with milestones, timelines, and technology stack tailored to your project.</p>
+                <ul class="step-features">
+                    <li>Project roadmap creation</li>
+                    <li>Technology stack selection</li>
+                    <li>UX/UI strategy session</li>
+                    <li>Content architecture planning</li>
+                </ul>
+            </div>
+            <div class="step-number">2</div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="process-step">
+            <div class="step-content">
+                <i class="fas fa-palette step-icon"></i>
+                <h3>Design & Prototyping</h3>
+                <p>We transform concepts into visual designs with interactive prototypes for your feedback and approval.</p>
+                <ul class="step-features">
+                    <li>Wireframing and mockups</li>
+                    <li>Interactive prototype development</li>
+                    <li>Brand identity integration</li>
+                    <li>User testing with real audiences</li>
+                </ul>
+            </div>
+            <div class="step-number">3</div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="process-step">
+            <div class="step-content">
+                <i class="fas fa-code step-icon"></i>
+                <h3>Development & Implementation</h3>
+                <p>Our developers bring designs to life with clean, efficient code following industry best practices.</p>
+                <ul class="step-features">
+                    <li>Agile development sprints</li>
+                    <li>Weekly progress demos</li>
+                    <li>Quality assurance testing</li>
+                    <li>Third-party API integrations</li>
+                </ul>
+            </div>
+            <div class="step-number">4</div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="process-step">
+            <div class="step-content">
+                <i class="fas fa-vial step-icon"></i>
+                <h3>Testing & Quality Assurance</h3>
+                <p>We rigorously test across devices and scenarios to ensure flawless performance and user experience.</p>
+                <ul class="step-features">
+                    <li>Cross-browser compatibility testing</li>
+                    <li>Performance optimization</li>
+                    <li>Security vulnerability scanning</li>
+                    <li>User acceptance testing</li>
+                </ul>
+            </div>
+            <div class="step-number">5</div>
+        </div>
+        
+        <!-- Step 6 -->
+        <div class="process-step">
+            <div class="step-content">
+                <i class="fas fa-rocket step-icon"></i>
+                <h3>Launch & Ongoing Support</h3>
+                <p>We deploy your project and provide continuous support with analytics and optimization services.</p>
+                <ul class="step-features">
+                    <li>Staged deployment strategy</li>
+                    <li>Post-launch monitoring</li>
+                    <li>Performance analytics reporting</li>
+                    <li>Ongoing maintenance packages</li>
+                </ul>
+            </div>
+            <div class="step-number">6</div>
+        </div>
+    </div>
+
+    <section class="process-cta">
+        <h2>Ready to Start Your Project?</h2>
+        <p>Our streamlined process ensures your vision becomes reality with maximum efficiency and minimum stress. Let's begin your journey today.</p>
+        <a href="#" class="cta-button">Begin Your Project</a>
+    </section>
+
+    <footer-component></footer-component>
+
+    <script>
+        // Animate process steps on scroll
+        const processSteps = document.querySelectorAll('.process-step');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        processSteps.forEach(step => {
+            observer.observe(step);
+        });
+
+        // Hover effects for step content
+        document.querySelectorAll('.step-content').forEach(content => {
+            content.addEventListener('mousemove', (e) => {
+                const x = e.offsetX / content.offsetWidth - 0.5;
+                const y = e.offsetY / content.offsetHeight - 0.5;
+                
+                content.style.transform = `
+                    translateY(-10px)
+                    rotateX(${y * 5}deg)
+                    rotateY(${x * 5}deg)
+                `;
+            });
+            
+            content.addEventListener('mouseleave', () => {
+                content.style.transform = 'translateY(-10px)';
+            });
+        });
+
+        // Floating elements animation
+        const floatingElements = document.querySelectorAll('.floating-element');
+        floatingElements.forEach((el, index) => {
+            el.style.animationDuration = `${15 + index * 3}s`;
+        });
+    </script>
+</body>
+</html>
