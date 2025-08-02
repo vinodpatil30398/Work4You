@@ -205,10 +205,10 @@ class HeaderComponent extends HTMLElement {
           
           <div class="w4u-header-sep-nav">
             <nav class="w4u-desktop-nav">
-              <a href="E:/Freelance Site/services.html">Services</a>
-              <a href="E:/Freelance Site/process.html">Process</a>
-              <a href="E:/Freelance Site/about-us.html">About</a>
-              <a href="E:/Freelance Site/contact-us.html">Contact us</a>
+              <a href="/services.html">Services</a>
+              <a href="/process.html">Process</a>
+              <a href="/about-us.html">About</a>
+              <a href="/contact-us.html">Contact us</a>
             </nav>
           </div>
           
@@ -221,10 +221,10 @@ class HeaderComponent extends HTMLElement {
         </div>
         
         <nav class="w4u-mobile-menu">
-          <a href="E:/Freelance Site/services.html">Services</a>
-          <a href="E:/Freelance Site/process.html">Process</a>
-            <a href="E:/Freelance Site/about-us.html">About</a>
-            <a href="E:/Freelance Site/contact-us.html">Contact us</a>
+          <a href="/services.html">Services</a>
+          <a href="/process.html">Process</a>
+            <a href="/about-us.html">About</a>
+            <a href="/contact-us.html">Contact us</a>
           <a href="#contact" class="w4u-mobile-cta">Hire Us</a>
         </nav>
       </header>
