@@ -170,6 +170,87 @@ class HeaderComponent extends HTMLElement {
           box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
           background: #ff7b20;
         }
+
+        /* Popup styles */
+        .popup-overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.7);
+          z-index: 9999;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .popup-container {
+          background-color: white;
+          border-radius: 8px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+          width: 90%;
+          max-width: 740px;
+          max-height: 90vh;
+          overflow-y: auto;
+          position: relative;
+          animation: popupFadeIn 0.3s ease-out;
+        }
+        
+        .popup-close-btn {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          width: 30px;
+          height: 30px;
+          background-color: #f1f1f1;
+          border: none;
+          border-radius: 50%;
+          font-size: 18px;
+          cursor: pointer;
+          z-index: 10;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.2s;
+        }
+        
+        .popup-close-btn:hover {
+          background-color: #e0e0e0;
+          transform: rotate(90deg);
+        }
+        
+        .inquiry-form-container {
+          padding: 30px;
+        }
+        
+        .thank-you-message {
+          display: none;
+          text-align: center;
+          padding: 40px;
+        }
+        
+        .thank-you-message h2 {
+          color: #4CAF50;
+          margin-bottom: 15px;
+        }
+        
+        .inquiry-form-iframe {
+          width: 100%;
+          height: 80vh;
+          border: none;
+        }
+        
+        @keyframes popupFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         
         @media (max-width: 768px) {
           .w4u-desktop-nav, 
@@ -213,7 +294,7 @@ class HeaderComponent extends HTMLElement {
           </div>
           
           <div class="w4u-header-sep-cta">
-            <a href="#contact" class="w4u-btn-cta">Hire Us</a>
+            <button id="hireUsDesktop" class="w4u-btn-cta">Hire Us</button>
             <button class="w4u-mobile-menu-toggle" aria-label="Toggle menu">
               <i class="fas fa-bars"></i>
             </button>
@@ -223,11 +304,29 @@ class HeaderComponent extends HTMLElement {
         <nav class="w4u-mobile-menu">
           <a href="/services.html">Services</a>
           <a href="/process.html">Process</a>
-            <a href="/about-us.html">About</a>
-            <a href="/contact-us.html">Contact us</a>
-          <a href="#contact" class="w4u-mobile-cta">Hire Us</a>
+          <a href="/about-us.html">About</a>
+          <a href="/contact-us.html">Contact us</a>
+          <button id="hireUsMobile" class="w4u-mobile-cta">Hire Us</button>
         </nav>
       </header>
+
+      <!-- Popup HTML Structure -->
+      <div class="popup-overlay" id="inquiryPopup">
+        <div class="popup-container">
+          <button class="popup-close-btn" id="closePopupBtn">&times;</button>
+          
+          <div class="inquiry-form-container" id="formContainer">
+            <div class="inquiry-form">
+              <iframe class="inquiry-form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLScoicqxzYpsCdSC5zyBPY54tRjAdqjwWaRMlEWA7xDYuWSqOA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+          </div>
+          
+          <div class="thank-you-message" id="thankYouMessage">
+            <h2>Thank You!</h2>
+            <p>We've received your inquiry and will get back to you soon.</p>
+          </div>
+        </div>
+      </div>
     `;
 
     this.initHeader();
@@ -277,6 +376,75 @@ class HeaderComponent extends HTMLElement {
         });
       });
     }
+
+    // Popup functionality
+    const initPopup = () => {
+      const popup = this.querySelector('#inquiryPopup');
+      const closeBtn = this.querySelector('#closePopupBtn');
+      const formContainer = this.querySelector('#formContainer');
+      const thankYouMessage = this.querySelector('#thankYouMessage');
+      const hireUsDesktop = this.querySelector('#hireUsDesktop');
+      const hireUsMobile = this.querySelector('#hireUsMobile');
+
+      const showPopup = () => {
+        popup.style.display = 'flex';
+        formContainer.style.display = 'block';
+        thankYouMessage.style.display = 'none';
+        document.body.style.overflow = 'hidden';
+        
+        // Close mobile menu if open
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+          mobileMenu.classList.remove('active');
+          mobileMenuToggle.classList.remove('active');
+        }
+      };
+
+      const hidePopup = () => {
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+      };
+
+      // Desktop button event
+      if (hireUsDesktop) {
+        hireUsDesktop.addEventListener('click', showPopup);
+      }
+
+      // Mobile button event
+      if (hireUsMobile) {
+        hireUsMobile.addEventListener('click', showPopup);
+      }
+
+      // Close button event
+      if (closeBtn) {
+        closeBtn.addEventListener('click', hidePopup);
+      }
+
+      // Click outside to close
+      if (popup) {
+        popup.addEventListener('click', (e) => {
+          if (e.target === popup) {
+            hidePopup();
+          }
+        });
+      }
+
+      // Listen for form submission
+      window.addEventListener('message', (event) => {
+        if (event.origin !== "https://docs.google.com") return;
+        
+        if (typeof event.data === 'string' && event.data.includes('FormSubmit')) {
+          formContainer.style.display = 'none';
+          thankYouMessage.style.display = 'block';
+          
+          setTimeout(() => {
+            hidePopup();
+          }, 3000);
+        }
+      });
+    };
+
+    // Initialize popup
+    initPopup();
   }
 }
 
